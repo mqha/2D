@@ -37,4 +37,9 @@ public class PlayerController : MonoBehaviour
             transform.localScale = newScale;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Win");
+    }
 }
