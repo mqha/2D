@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isRunning = false;
 
+    public System.Action onDead;
+
 
     void Start()
     {
@@ -49,12 +51,27 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("1");
+        if (collision.CompareTag("Trap"))
+        {
+            Die();
+        } 
+        else
+
+        if (collision.CompareTag("EndGame"))
+        {
+            Debug.Log("Win");
+        }
     }
 
     private void SetAnimation()
     {
         animator.SetBool("Run", isRunning);
+    }
+
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
+        onDead?.Invoke();
     }
 
 }
