@@ -8,15 +8,20 @@ public class PlayerController : MonoBehaviour
 
     private float horizontal = 0f;
 
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb2D;
+
+    private Animator animator;
+
+    private bool isRunning = false;
 
 
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
@@ -26,6 +31,10 @@ public class PlayerController : MonoBehaviour
         transform.position += movement * speedMove * Time.deltaTime;
 
         Flip(horizontal);
+
+        isRunning = horizontal != 0;
+        SetAnimation();
+
     }
 
     private void Flip(float horizontal)
@@ -42,4 +51,10 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("1");
     }
+
+    private void SetAnimation()
+    {
+        animator.SetBool("Run", isRunning);
+    }
+
 }
