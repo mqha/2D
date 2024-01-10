@@ -2,23 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CoinCounter : MonoBehaviour
 {
+    public static CoinCounter instance;
 
-     Text counterText;
-    
-    void Start()
-    {
-        counterText = GetComponent<Text>();
-    }
+    private int coins;
 
-    
-    void Update()
+    [SerializeField] private TMP_Text coinDisplay;
+
+    private void Awake()
     {
-        if (counterText.text != CoinManager.totalCoins.ToString())
+        if (!instance)
         {
-            counterText.text = CoinManager.totalCoins.ToString();
+            instance = this;
         }
     }
+
+    private void OnGUI()
+    {
+        coinDisplay.text = coins.ToString();
+    }
+
+    public void ChangeCoins(int amout)
+    {
+        coins += amout;
+    }
+
 }

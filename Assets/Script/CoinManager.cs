@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class CoinManager : MonoBehaviour
 {
+    [SerializeField] private int value;
+    private bool hasTriggered;
 
-    public static int totalCoins = 0;
+    private CoinCounter coinCounter;
 
-    private void Awake()
+    private void Start()
     {
-        GetComponent<Collider2D>().isTrigger = true;
+        coinCounter = CoinCounter.instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        totalCoins++;
-        Destroy(gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            hasTriggered = true;
+            coinCounter.ChangeCoins(value);
+            Destroy(gameObject);
+        }
     }
 }
