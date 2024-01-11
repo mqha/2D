@@ -7,6 +7,8 @@ public class CoinManager : MonoBehaviour
     [SerializeField] private int value;
     private bool hasTriggered = false;
 
+    [SerializeField] private GameObject coinExplosion;
+
     private GameManager coinCounter;
 
     private void Start()
@@ -20,7 +22,15 @@ public class CoinManager : MonoBehaviour
         {
             hasTriggered = true;
             coinCounter.ChangeCoins(value);
-            Destroy(gameObject);
+            CoinExplosion();
         }
+    }
+
+    private void CoinExplosion()
+    {
+        var explosion = Instantiate(coinExplosion, transform.position, transform.rotation);
+        Destroy(explosion, 1);
+        Destroy(gameObject);
+
     }
 }

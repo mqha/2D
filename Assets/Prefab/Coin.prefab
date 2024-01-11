@@ -115,3 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  coinExplosion: {fileID: 3392185906960050157, guid: a3f8cfdf2df39cf48a609b4aa56fffa3, type: 3}
