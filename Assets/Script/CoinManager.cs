@@ -5,13 +5,13 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     [SerializeField] private int value;
-    private bool hasTriggered;
+    private bool hasTriggered = false;
 
-    private CoinCounter coinCounter;
+    private GameManager coinCounter;
 
     private void Start()
     {
-        coinCounter = CoinCounter.instance;
+        coinCounter = GameManager.instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
