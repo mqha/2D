@@ -26,10 +26,10 @@ public class TrapController : MonoBehaviour
             }
             else
                 transform.Translate(Vector3.down * spikeSpeed * Time.deltaTime);
+        yield return null;
         }
 
 
-        yield return null;
 
     }
 
