@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameFlow : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject gameWinUI;
     [SerializeField] private GameObject bgMusic;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject cameraMove;
@@ -13,13 +14,22 @@ public class GameFlow : MonoBehaviour
     void Start()
     {
         gameOverUI.SetActive(false);
+        gameWinUI.SetActive(false);
         playerController.onDead += OnGameOver;
+        playerController.onLive += OnGameWin;
     }
 
-    
+
+
     public void OnGameOver()
     {
         gameOverUI.SetActive(true);
+        bgMusic.SetActive(false);
+    }
+
+    public void OnGameWin()
+    {
+        gameWinUI.SetActive(true);
         bgMusic.SetActive(false);
     }
 }

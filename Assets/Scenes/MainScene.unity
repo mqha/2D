@@ -185,8 +185,8 @@ MonoBehaviour:
 
     SCRAMBLERS'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c861d7d7c3bbfcb4d97f5b6dac245a08, type: 2}
+  m_sharedMaterial: {fileID: 7731683083808093958, guid: c861d7d7c3bbfcb4d97f5b6dac245a08, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -194,11 +194,11 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+  m_enableVertexGradient: 1
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.9339623, g: 0.074893214, b: 0.074893214, a: 1}
+    topRight: {r: 0.9339623, g: 0.074893214, b: 0.074893214, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -210,8 +210,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 165
+  m_fontSizeBase: 165
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

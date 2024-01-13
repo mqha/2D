@@ -12,6 +12,12 @@ public class StageBtnController : MonoBehaviour
 
     public void OnReturnBtnClicked()
     {
-        SceneManager.LoadScene("Stage1");
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+    }
+
+    public void Stage2BtnClicker()
+    {
+        SceneManager.LoadScene(4);
     }
 }

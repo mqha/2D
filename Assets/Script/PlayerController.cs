@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isRunning = false;
 
     public System.Action onDead;
+    public System.Action onLive;
 
 
     void Start()
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("EndGame"))
         {
-            Debug.Log("Win");
+            WinGame();
         }
     }
 
@@ -73,5 +74,12 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObject);
         onDead?.Invoke();
     }
+
+    protected virtual void WinGame()
+    {
+        Destroy(gameObject);
+        onLive?.Invoke();
+    }
+
 
 }
