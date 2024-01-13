@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TrapController : MonoBehaviour
 {
-    [SerializeField] private float spikeDelayTime = 2f;
-    [SerializeField] private float spikeSpeed = 1f;
+    [SerializeField] private float spikeDelayTime = 1;
+    [SerializeField] private float spikeSpeed = 1;
     [SerializeField] private bool spikeMove = false;
 
 
@@ -26,11 +26,9 @@ public class TrapController : MonoBehaviour
             }
             else
                 transform.Translate(Vector3.down * spikeSpeed * Time.deltaTime);
+
         yield return null;
         }
-
-
-
     }
 
     

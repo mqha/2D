@@ -1536,6 +1536,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4723585404215294670, guid: 1fcbd7ce759e9b441bc3693514d1e23c, type: 3}
+      propertyPath: spikeMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6829092354716761650, guid: 1fcbd7ce759e9b441bc3693514d1e23c, type: 3}
       propertyPath: m_Name
       value: Trap
@@ -4671,6 +4675,14 @@ PrefabInstance:
     - target: {fileID: 691913841556392627, guid: 1fcbd7ce759e9b441bc3693514d1e23c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060569681656218647, guid: 1fcbd7ce759e9b441bc3693514d1e23c, type: 3}
+      propertyPath: spikeMove
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060569681656218647, guid: 1fcbd7ce759e9b441bc3693514d1e23c, type: 3}
+      propertyPath: spikeSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6829092354716761650, guid: 1fcbd7ce759e9b441bc3693514d1e23c, type: 3}
       propertyPath: m_Name
