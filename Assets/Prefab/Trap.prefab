@@ -430,7 +430,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4226998936765085423}
   - component: {fileID: 6535226562751790902}
-  - component: {fileID: 4723585404215294670}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Trap
@@ -446,7 +445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5149545214972925386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.009, y: -0.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -483,21 +482,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0417075, y: 0.20289612}
   m_EdgeRadius: 0
---- !u!114 &4723585404215294670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5149545214972925386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efff8be31e0b4fe448d8318bd31fc090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spikeDelayTime: 1
-  spikeSpeed: 10
-  spikeMove: 0
 --- !u!1 &5499283638634699506
 GameObject:
   m_ObjectHideFlags: 0
