@@ -20,4 +20,9 @@ public class StageBtnController : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
+
+    public void Stage3BtnClicker()
+    {
+        SceneManager.LoadScene(5);
+    }
 }
