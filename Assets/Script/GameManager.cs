@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        LoadCoins();
+    }
+
     private void OnGUI()
     {
         coinDisplay.text = coins.ToString();
@@ -28,6 +33,18 @@ public class GameManager : MonoBehaviour
     public void ChangeCoins(int amout)
     {
         coins += amout;
+        SaveCoins();
+    }
+
+    private void SaveCoins()
+    {
+        PlayerPrefs.SetInt("PlayerCoins", coins);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadCoins()
+    {
+        coins = PlayerPrefs.GetInt("PlayerCoins", 0);
     }
 
 
