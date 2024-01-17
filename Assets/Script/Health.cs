@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField]  private float startHealth;
+    [SerializeField] private float startHealth;
+    [SerializeField] private GameObject player;
 
     public System.Action onDead;
     public System.Action onLive;
     public float currentHealth { get; private set; }
     private Animator anim;
+
+    public bool playerLive = true;
 
 
     private void Awake()
@@ -29,9 +32,9 @@ public class Health : MonoBehaviour
         }
         else
         {
-            anim.SetTrigger("Die");
-            Destroy(gameObject);
+            playerLive = false;
             Die();
+           
         }
     }
 
@@ -39,18 +42,21 @@ public class Health : MonoBehaviour
     {
         if (collision.CompareTag("Trap"))
         {
+            playerLive = false;
             Die();
         }
         else
 
-        if (collision.CompareTag("EndGame"))
+        if (collision.CompareTag("EndGame") || player == null)
         {
+            playerLive = false;
             WinGame();
         }
     }
 
     protected virtual void Die()
     {
+        anim.SetTrigger("Die");
         Destroy(gameObject);
         onDead?.Invoke();
     }
@@ -60,7 +66,4 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
         onLive?.Invoke();
     }
-
-
-
 }

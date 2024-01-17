@@ -14,9 +14,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isRunning = false;
 
-    public System.Action onDead;
-    public System.Action onLive;
-
 
     void Start()
     {
@@ -27,16 +24,18 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
 
-        Vector3 movement = new Vector3(horizontal, 0f, 0f);
+            horizontal = Input.GetAxis("Horizontal");
 
-        transform.position += movement * speedMove * Time.deltaTime;
+            Vector3 movement = new Vector3(horizontal, 0f, 0f);
 
-        Flip(horizontal);
+            transform.position += movement * speedMove * Time.deltaTime;
 
-        isRunning = horizontal != 0;
-        SetAnimation();
+            Flip(horizontal);
+
+            isRunning = horizontal != 0;
+            SetAnimation();
+
 
     }
 
@@ -50,36 +49,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Trap"))
-        {
-            Die();
-        } 
-        else
-
-        if (collision.CompareTag("EndGame"))
-        {
-            WinGame();
-        }
-    }
+    
 
     private void SetAnimation()
     {
         animator.SetBool("Run", isRunning);
     }
 
-    protected virtual void Die()
-    {
-        Destroy(gameObject);
-        onDead?.Invoke();
-    }
-
-    protected virtual void WinGame()
-    {
-        Destroy(gameObject);
-        onLive?.Invoke();
-    }
+    
 
 
 }
