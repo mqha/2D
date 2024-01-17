@@ -7,7 +7,7 @@ public class GameFlow : MonoBehaviour
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject gameWinUI;
     [SerializeField] private GameObject bgMusic;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private Health playerController;
     [SerializeField] private GameObject cameraMove;
 
 
