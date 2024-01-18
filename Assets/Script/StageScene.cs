@@ -10,6 +10,11 @@ public class StageScene : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void OnGoButtonClicked()
+    {
+        SceneManager.LoadScene("StageScene");
+    }
+
     public void SelectStage1()
     {
         SceneManager.LoadScene("Stage1");

@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerHealth.playerLive == true)
+        if(playerHealth.playerLive != false)
         transform.Translate(Vector3.down*cameraSpeed*Time.deltaTime);
     }
 }

@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 484597483031703199}
   m_Layer: 0
   m_Name: Idle (3)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 4506034232176380761}
   m_Layer: 0
   m_Name: Idle (2)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -430,9 +430,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4226998936765085423}
   - component: {fileID: 6535226562751790902}
+  - component: {fileID: 5175992175098397584}
   m_Layer: 0
   m_Name: Spikes
-  m_TagString: Trap
+  m_TagString: Saw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,6 +483,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0417075, y: 0.20289612}
   m_EdgeRadius: 0
+--- !u!114 &5175992175098397584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5149545214972925386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ef93f0617387a41a2902e1d55174e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &5499283638634699506
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +508,7 @@ GameObject:
   - component: {fileID: 4930825942533617060}
   m_Layer: 0
   m_Name: Idle (1)
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -725,7 +739,7 @@ GameObject:
   - component: {fileID: 5362314518723482257}
   m_Layer: 0
   m_Name: Idle
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
