@@ -7,6 +7,6 @@ public class MainScene : MonoBehaviour
 {
     public void OnPlayButtonClicked()
     {
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene(1);
     }
 }
