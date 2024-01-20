@@ -7,6 +7,9 @@ public class StageBtnController : MonoBehaviour
 {
     [SerializeField] private GameObject gamePauseUI;
 
+    private bool isGamePause = false;
+
+
         private void Start()
     {
         gamePauseUI.SetActive(false);
@@ -33,8 +36,15 @@ public class StageBtnController : MonoBehaviour
         SceneManager.LoadScene(5);
     }
 
-    public void PauseClicker()
+    public void PauseGame()
     {
         gamePauseUI.SetActive(true);
+        isGamePause = true;
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        
     }
 }
