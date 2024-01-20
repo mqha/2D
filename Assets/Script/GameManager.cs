@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    private int coins; // l?u tr? s? coin
+    private int coins; 
 
     [SerializeField] private TMP_Text coinDisplay;
 

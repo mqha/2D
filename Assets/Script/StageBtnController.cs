@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StageBtnController : MonoBehaviour
 {
+    [SerializeField] private GameObject gamePauseUI;
+
+        private void Start()
+    {
+        gamePauseUI.SetActive(false);
+    }
+
     public void OnHomeBtnClicked()
     {
         SceneManager.LoadScene("MainScene");
@@ -24,5 +31,10 @@ public class StageBtnController : MonoBehaviour
     public void Stage3BtnClicker()
     {
         SceneManager.LoadScene(5);
+    }
+
+    public void PauseClicker()
+    {
+        gamePauseUI.SetActive(true);
     }
 }
