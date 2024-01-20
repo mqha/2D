@@ -7,10 +7,11 @@ public class AudioManager : MonoBehaviourSingletonPersistent<AudioManager>
 {
 
 
-    public Sound[] musicSounds;
+    public Sound[] musicSounds, sfxSounds;
 
-    public AudioSource musicSource;
+    public AudioSource musicSource, sfxSource;
 
+    
 
     private void Start()
     {
@@ -29,5 +30,18 @@ public class AudioManager : MonoBehaviourSingletonPersistent<AudioManager>
                 musicSource.clip = s.clip;
                 musicSource.Play();
             }
+    }
+
+    public void PlaySFX(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound not found");
         }
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+        }
+    }
 }

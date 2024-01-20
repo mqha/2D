@@ -23,6 +23,7 @@ public class CoinManager : MonoBehaviour
             hasTriggered = true;
             coinCounter.ChangeCoins(value);
             CoinExplosion();
+            AudioManager.Instance.PlaySFX("Coin");
         }
     }
 
