@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speedMove = 10f;
 
+
     private float horizontal = 0f;
 
     private Rigidbody2D rb2D;
@@ -56,7 +57,9 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Run", isRunning);
     }
 
-    
+ 
+
+
 
 
 }

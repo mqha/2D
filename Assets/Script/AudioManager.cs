@@ -44,4 +44,17 @@ public class AudioManager : MonoBehaviourSingletonPersistent<AudioManager>
             sfxSource.PlayOneShot(s.clip);
         }
     }
+
+
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+
+    public void ToggleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+
+
 }

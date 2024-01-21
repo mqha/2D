@@ -2556,6 +2556,7 @@ GameObject:
   - component: {fileID: 879637032}
   - component: {fileID: 879637033}
   - component: {fileID: 879637034}
+  - component: {fileID: 879637035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2733,6 +2734,20 @@ MonoBehaviour:
   startHealth: 3
   player: {fileID: 879637027}
   playerLive: 1
+--- !u!114 &879637035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879637027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706d3f4d0a8acb04d9b7188de912860e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skins: []
+  selectedCharacter: 0
 --- !u!4 &902981541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9207385670741587843, guid: ca6d80a027a748044aa9c1af66960063, type: 3}
