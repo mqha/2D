@@ -41,12 +41,12 @@ public class StageBtnController : MonoBehaviour
     public void PauseGame()
     {
         gamePauseUI.SetActive(true);
-        isGamePause = true;
         Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
-        
+        gamePauseUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

@@ -9,7 +9,6 @@ public class GameFlow : MonoBehaviour
     [SerializeField] private Health playerController;
     [SerializeField] private GameObject cameraMove;
 
-
     void Start()
     {
         gameOverUI.SetActive(false);
@@ -23,13 +22,11 @@ public class GameFlow : MonoBehaviour
     public void OnGameOver()
     {
         gameOverUI.SetActive(true);
-
     }
 
     public void OnGameWin()
     {
         gameWinUI.SetActive(true);
-
     }
 
 }

@@ -20,10 +20,12 @@ public class CoinManager : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            ScoreManager.instace.AddPoint();
             hasTriggered = true;
             coinCounter.ChangeCoins(value);
             CoinExplosion();
             AudioManager.Instance.PlaySFX("Coin");
+            
         }
     }
 
