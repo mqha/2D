@@ -20,7 +20,7 @@ public class CoinManager : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            ScoreManager.instace.AddPoint();
+            ScoreManager.Instance.AddPoint();
             hasTriggered = true;
             coinCounter.ChangeCoins(value);
             CoinExplosion();

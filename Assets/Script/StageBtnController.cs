@@ -7,11 +7,6 @@ public class StageBtnController : MonoBehaviour
 {
     [SerializeField] private GameObject gamePauseUI;
 
-
-
-    private bool isGamePause = false;
-
-
         private void Start()
     {
         gamePauseUI.SetActive(false);

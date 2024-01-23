@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : MonoBehaviourSingletonPersistent<ScoreManager>
 {
-    public static ScoreManager instace;
     public TMP_Text scoreText;
     public TMP_Text highScoreText;
 
@@ -15,10 +14,6 @@ public class ScoreManager : MonoBehaviour
      int score = 0;
      int highscore = 0;
 
-    private void Awake()
-    {
-        instace = this;
-    }
 
     private void Start()
     {
