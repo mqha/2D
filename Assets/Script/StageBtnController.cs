@@ -14,7 +14,7 @@ public class StageBtnController : MonoBehaviour
 
     public void OnHomeBtnClicked()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OnReturnBtnClicked()

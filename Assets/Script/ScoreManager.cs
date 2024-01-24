@@ -4,22 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ScoreManager : MonoBehaviourSingletonPersistent<ScoreManager>
+public class ScoreManager : MonoBehaviour
 {
     public TMP_Text scoreText;
     public TMP_Text highScoreText;
 
+    public static ScoreManager Instance;
+
     private int score = 0;
     private int highscore = 0;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         highscore = PlayerPrefs.GetInt("highscore", 0);
-        UpdateUI();
-    }
-
-    private void UpdateUI()
-    {
         scoreText.text = "Score: " + score.ToString();
         highScoreText.text = "Highscore: " + highscore.ToString();
     }
@@ -27,17 +28,9 @@ public class ScoreManager : MonoBehaviourSingletonPersistent<ScoreManager>
     public void AddPoint()
     {
         score += 1;
-        if (highscore < score)
-        {
-            highscore = score;
+        scoreText.text = "Score: " + score.ToString();
+        if(highscore<score)
             PlayerPrefs.SetInt("highscore", score);
-        }
-        UpdateUI();
-    }
-
-    public int GetScore()
-    {
-        return score;
     }
 
 
