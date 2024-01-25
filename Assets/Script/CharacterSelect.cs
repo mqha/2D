@@ -1,40 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public GameObject[] skins;
-    public int selectedCharacter;
-    private void Awake()
-    {
-        selectedCharacter = PlayerPrefs.GetInt("SelecCharacter", 0);
-        foreach (GameObject player in skins)
-            player.SetActive(false);
+    private int index;
+    [SerializeField] GameObject[] character;
+    [SerializeField] TextMeshProUGUI characterName;
 
-        skins[selectedCharacter].SetActive(true);
+    [SerializeField] GameObject[] characterPrefabs;
+
+    public static GameObject selectedCharacter;
+
+    void Start()
+    {
+        index = 0;
+        SelectCharacter();
     }
 
-    public void ChangeNext()
+    public void OnPrevSelect()
     {
-        skins[selectedCharacter].SetActive(false);
-        selectedCharacter++;
-        if (selectedCharacter == skins.Length)
-            selectedCharacter = 0;
+        if (index > 0)
+        {
+            index--;
+        }
 
-        skins[selectedCharacter].SetActive(true);
-        PlayerPrefs.SetInt("SelecCharacter", selectedCharacter);
+
+        SelectCharacter();
+            
     }
 
-    public void ChangePrevious()
+    public void OnNextSelect()
     {
-        skins[selectedCharacter].SetActive(false);
-        selectedCharacter--;
-        if (selectedCharacter == -1)
-            selectedCharacter = skins.Length -1;
-
-        skins[selectedCharacter].SetActive(true);
-        PlayerPrefs.SetInt("SelecCharacter", selectedCharacter);
+        if (index < character.Length - 1)
+        {
+            index++;
+        }
+        SelectCharacter();
     }
 
+    public void OnPlayBtnClick()
+    {
+        SceneManager.LoadScene("StageScene");
+    }
+
+    private void SelectCharacter()
+    {
+        for(int i = 0; i< character.Length; i++)
+        {
+            if (i == index)
+            {
+                character[i].GetComponent<SpriteRenderer>().color = Color.white;
+                character[i].GetComponent<Animator>().enabled = true;
+                selectedCharacter = characterPrefabs[i];
+                characterName.text = characterPrefabs[i].name;
+            }
+            else
+            {
+                character[i].GetComponent<SpriteRenderer>().color = Color.black;
+                character[i].GetComponent<Animator>().enabled = false;
+            }
+        }
+    }
 }

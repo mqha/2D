@@ -4,66 +4,107 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float startHealth;
-    [SerializeField] private GameObject player;
+    private int maxHealth;
+    private float currentHealth;
 
     public System.Action onDead;
     public System.Action onLive;
-    public float currentHealth { get; private set; }
-    private Animator anim;
 
-    public bool playerLive = true;
-
-
-    private void Awake()
+    public Health(int maxHealth)
     {
-        currentHealth = startHealth;
-        anim = GetComponent<Animator>();
+        this.maxHealth = maxHealth;
+        this.currentHealth = maxHealth;
     }
 
-    public void TakeDamage(float _damage)
+    public float GetCurrentHealth()
     {
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startHealth);
-
-
-        if(currentHealth > 0)
-        {
-            anim.SetTrigger("Hurt");
-        }
-        else
-        {
-            playerLive = false;
-            Die();
-           
-        }
+        return currentHealth;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage(float damage)
     {
-        if (collision.CompareTag("Trap"))
+        currentHealth -= damage;
+        if (currentHealth <= 0)
         {
-            playerLive = false;
             Die();
         }
-        else
-
-        if (collision.CompareTag("EndGame") || player == null)
-        {
-            playerLive = false;
-            WinGame();
-        }
     }
 
-    protected virtual void Die()
+    public void Heal(int amount)
     {
-        anim.SetTrigger("Die");
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+    }
+
+    private void Die()
+    {
+
         Destroy(gameObject);
         onDead?.Invoke();
     }
 
-    protected virtual void WinGame()
-    {
-        Destroy(gameObject);
-        onLive?.Invoke();
-    }
+
+
+    //[SerializeField] private float startHealth;
+    //Character playerStartHealth;
+
+    //public System.Action onDead;
+    //public System.Action onLive;
+    //public float currentHealth { get; private set; }
+    //private Animator anim;
+
+    //public bool playerLive = true;
+
+
+    //private void Awake()
+    //{
+
+    //    currentHealth = startHealth;
+    //    anim = GetComponent<Animator>();
+    //}
+
+    //public void TakeDamage(float _damage)
+    //{
+    //    currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startHealth);
+
+
+    //    if(currentHealth > 0)
+    //    {
+    //        anim.SetTrigger("Hurt");
+    //    }
+    //    else
+    //    {
+    //        playerLive = false;
+    //        Die();
+
+    //    }
+    //}
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Trap"))
+    //    {
+    //        playerLive = false;
+    //        Die();
+    //    }
+    //    else
+
+    //    if (collision.CompareTag("EndGame") || player == null)
+    //    {
+    //        playerLive = false;
+    //        WinGame();
+    //    }
+    //}
+
+    //protected virtual void Die()
+    //{
+    //    anim.SetTrigger("Die");
+    //    Destroy(gameObject);
+    //    onDead?.Invoke();
+    //}
+
+    //protected virtual void WinGame()
+    //{
+    //    Destroy(gameObject);
+    //    onLive?.Invoke();
+    //}
 }

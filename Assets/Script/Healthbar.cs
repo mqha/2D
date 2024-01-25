@@ -5,18 +5,32 @@ using UnityEngine.UI;
 
 public class Healthbar : MonoBehaviour
 {
-    [SerializeField] private Health playerHealth;
+    Character player;
     [SerializeField] private Image totalHealthBar;
     [SerializeField] private Image currentHealthBar;
 
     void Start()
     {
-        totalHealthBar.fillAmount = playerHealth.currentHealth/3;
+        player = Init.player;
+        UpdateHealthBar();
+        //totalHealthBar.fillAmount = playerHealth.currentHealth/3;
     }
 
     
     void Update()
     {
-        currentHealthBar.fillAmount = playerHealth.currentHealth / 3;
+        UpdateHealthBar();
+        //currentHealthBar.fillAmount = playerHealth.currentHealth/3;
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (player != null)
+        {
+            // Ensure that the division is done correctly by casting to float
+            float maxHealth = 3f;
+            totalHealthBar.fillAmount = player.health.GetCurrentHealth() / maxHealth;
+            currentHealthBar.fillAmount = player.health.GetCurrentHealth() / maxHealth;
+        }
     }
 }
