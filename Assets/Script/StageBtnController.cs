@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class StageBtnController : MonoBehaviour
 {
-    
-
-
 
     public void OnHomeBtnClicked()
     {
