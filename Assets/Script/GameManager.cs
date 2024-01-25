@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMP_Text coinDisplay;
 
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject gameWinUI;
+    private PlayerController playerController;
+
     private void Awake()
     {
         if (!instance)
@@ -23,6 +27,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LoadCoins();
+        gameOverUI.SetActive(false);
+        gameWinUI.SetActive(false);
+        playerController.onDead += OnGameOver;
+        playerController.onLive += OnGameWin;
     }
 
     private void OnGUI()
@@ -45,6 +53,16 @@ public class GameManager : MonoBehaviour
     private void LoadCoins()
     {
         coins = PlayerPrefs.GetInt("PlayerCoins", 0);
+    }
+
+    public void OnGameOver()
+    {
+        gameOverUI.SetActive(true);
+    }
+
+    public void OnGameWin()
+    {
+        gameWinUI.SetActive(true);
     }
 
 

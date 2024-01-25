@@ -63,17 +63,10 @@ public class Character
         animator = gameObject.GetComponent<Animator>();
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
         transform = gameObject.transform;
-        health = new Health(3);
+
     }
 
-    public void TakeDamage(int damage)
-    {
-        health.TakeDamage(damage);
-    }
 
-    public void Heal(int amount)
-    {
-        health.Heal(amount);
-    }
+
 
 }

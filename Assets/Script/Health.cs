@@ -4,107 +4,30 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private int maxHealth;
-    private float currentHealth;
+    [SerializeField] private float startingHealth;
+    public float currentHealth { get; private set; }
+    private Animator animator;
 
-    public System.Action onDead;
-    public System.Action onLive;
-
-    public Health(int maxHealth)
+    private void Awake()
     {
-        this.maxHealth = maxHealth;
-        this.currentHealth = maxHealth;
+        currentHealth = startingHealth;
+        animator = GetComponent<Animator>();
     }
-
-    public float GetCurrentHealth()
+    public void TakeDamage(float _damage)
     {
-        return currentHealth;
-    }
-
-    public void TakeDamage(float damage)
-    {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+        if (currentHealth > 0)
         {
-            Die();
+            animator.SetTrigger("Hurt");
+        }
+        else
+        {
+            animator.SetTrigger("Die");
         }
     }
 
-    public void Heal(int amount)
+    private void Update()
     {
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        
     }
-
-    private void Die()
-    {
-
-        Destroy(gameObject);
-        onDead?.Invoke();
-    }
-
-
-
-    //[SerializeField] private float startHealth;
-    //Character playerStartHealth;
-
-    //public System.Action onDead;
-    //public System.Action onLive;
-    //public float currentHealth { get; private set; }
-    //private Animator anim;
-
-    //public bool playerLive = true;
-
-
-    //private void Awake()
-    //{
-
-    //    currentHealth = startHealth;
-    //    anim = GetComponent<Animator>();
-    //}
-
-    //public void TakeDamage(float _damage)
-    //{
-    //    currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startHealth);
-
-
-    //    if(currentHealth > 0)
-    //    {
-    //        anim.SetTrigger("Hurt");
-    //    }
-    //    else
-    //    {
-    //        playerLive = false;
-    //        Die();
-
-    //    }
-    //}
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Trap"))
-    //    {
-    //        playerLive = false;
-    //        Die();
-    //    }
-    //    else
-
-    //    if (collision.CompareTag("EndGame") || player == null)
-    //    {
-    //        playerLive = false;
-    //        WinGame();
-    //    }
-    //}
-
-    //protected virtual void Die()
-    //{
-    //    anim.SetTrigger("Die");
-    //    Destroy(gameObject);
-    //    onDead?.Invoke();
-    //}
-
-    //protected virtual void WinGame()
-    //{
-    //    Destroy(gameObject);
-    //    onLive?.Invoke();
-    //}
 }
