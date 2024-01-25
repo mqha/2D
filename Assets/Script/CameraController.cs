@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private float cameraSpeed = 1f;
+    [SerializeField] private float cameraSpeed;
+    private PlayerController playerController;
 
 
-    // Update is called once per frame
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
     void Update()
     {
-        transform.Translate(Vector3.down*cameraSpeed*Time.deltaTime);
+        if (playerController != null)
+        {
+            transform.Translate(Vector3.down * cameraSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector3.down * 0 * Time.deltaTime);
+        }
+            
     }
 }
