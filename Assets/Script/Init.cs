@@ -21,10 +21,10 @@ public class Init : MonoBehaviour
                 player = new MaskDude(playerObject);
                 break;
             case "NinJa Frog":
-                player = new MaskDude(playerObject);
+                player = new NinjaFrog(playerObject);
                 break;
             case "Virtual Guy":
-                player = new MaskDude(playerObject);
+                player = new VirtualGuy(playerObject);
                 break;
         }
     }

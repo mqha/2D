@@ -6805,7 +6805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3928ca67a62f48d4f9c62c48077096c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinDisplay: {fileID: 0}
+  coinDisplay: {fileID: 1303399420}
   gameOverUI: {fileID: 878576141}
   gameWinUI: {fileID: 2122411762}
 --- !u!4 &1498213281
