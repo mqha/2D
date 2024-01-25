@@ -7,13 +7,10 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     private PlayerController playerController;
 
-
-    private void Start()
-    {
-        playerController = FindObjectOfType<PlayerController>();
-    }
     void Update()
     {
+        playerController = FindObjectOfType<PlayerController>();
+
         if (playerController != null)
         {
             transform.Translate(Vector3.down * cameraSpeed * Time.deltaTime);
