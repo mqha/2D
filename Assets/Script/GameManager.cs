@@ -29,8 +29,14 @@ public class GameManager : MonoBehaviour
         LoadCoins();
         gameOverUI.SetActive(false);
         gameWinUI.SetActive(false);
+        playerController = FindObjectOfType<PlayerController>();
+        
+    }
+    private void Update()
+    {
         playerController.onDead += OnGameOver;
         playerController.onLive += OnGameWin;
+
     }
 
     private void OnGUI()
