@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Character player;
+    
 
     public System.Action onDead;
     public System.Action onLive;
 
 
-    void Start()
-    {
-        player = Init.player;
-    }
-
-
-    void Update()
-    {
-        player.Update();
-    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
