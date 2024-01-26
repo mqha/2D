@@ -7,9 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField] private SkinManager skinManager;
 
     private float moveSpeed = 5f;
-    public float jumpForce = 500f;
 
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D playerbody;
 
     private float horizontal = 0f;
 
@@ -21,8 +20,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        playerbody = GetComponent<Rigidbody2D>();
         GetComponent<SpriteRenderer>().sprite = skinManager.GetSelectedSkin().sprite;
-        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
