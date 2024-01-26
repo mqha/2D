@@ -6,23 +6,24 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private SkinManager skinManager;
 
+    private Health health;
+
+
     private float moveSpeed = 5f;
 
     private Rigidbody2D playerbody;
 
     private float horizontal = 0f;
 
-
-
     public System.Action onDead;
     public System.Action onLive;
-
 
     private void Start()
     {
         playerbody = GetComponent<Rigidbody2D>();
         GetComponent<SpriteRenderer>().sprite = skinManager.GetSelectedSkin().sprite;
     }
+
 
     void Update()
     {
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Trap"))
+        if (collision.CompareTag("Trap")|| collision.CompareTag("Saw"))
         {
 
             Die();

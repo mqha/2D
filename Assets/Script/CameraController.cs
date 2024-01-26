@@ -5,11 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private float cameraSpeed;
-    private PlayerController playerController;
+    private Player playerController;
 
     void Update()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<Player>();
 
         if (playerController != null)
         {

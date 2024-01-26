@@ -6229,6 +6229,7 @@ GameObject:
   - component: {fileID: 2092104119}
   - component: {fileID: 2092104121}
   - component: {fileID: 2092104122}
+  - component: {fileID: 2092104123}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -6331,7 +6332,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6363,6 +6364,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22116868, y: 0.24798235}
   m_EdgeRadius: 0
+--- !u!95 &2092104123
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092104116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2113400434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9207385670741587843, guid: ca6d80a027a748044aa9c1af66960063, type: 3}
