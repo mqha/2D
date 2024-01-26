@@ -6,38 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     
 
-    public System.Action onDead;
-    public System.Action onLive;
+   
 
 
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Trap"))
-        {
-            
-            Die();
-            Destroy(gameObject);
-        }
-        else if (collision.CompareTag("EndGame"))
-        {
-            WinGame();
-            Destroy(gameObject);
-        }
-    }
+    
 
-    protected virtual void WinGame()
-    {
-        Destroy(gameObject);
-        onLive?.Invoke();
-    }
 
-    protected virtual void Die()
-    {
-
-        Destroy(gameObject);
-        onDead?.Invoke();
-    }
 
 
 

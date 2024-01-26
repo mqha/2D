@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject gameWinUI;
-    private PlayerController playerController;
+    private Player playerController;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         LoadCoins();
         gameOverUI.SetActive(false);
         gameWinUI.SetActive(false);
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<Player>();
         playerController.onDead += OnGameOver;
         playerController.onLive += OnGameWin;
     }
