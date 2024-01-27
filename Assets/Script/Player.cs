@@ -15,10 +15,15 @@ public class Player : MonoBehaviour
     public System.Action onDead;
     public System.Action onLive;
 
+    private Animator animator;
+
+    private bool isRunning = false;
+
     private void Start()
     {
         playerbody = GetComponent<Rigidbody2D>();
         GetComponent<SpriteRenderer>().sprite = skinManager.GetSelectedSkin().sprite;
+        animator = GetComponent<Animator>();
     }
 
 
@@ -28,8 +33,13 @@ public class Player : MonoBehaviour
 
         transform.position += Vector3.right * moveSpeed * Time.deltaTime * horizontal;
 
-
         Flip();
+
+        if(horizontal != 0 && !isRunning)
+        {
+            AnimationRunning();
+        }
+
     }
 
     private void Flip()
@@ -68,6 +78,11 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
         onDead?.Invoke();
     }
-}
 
-    
+    private void AnimationRunning()
+    {
+        isRunning = true;
+        animator.SetBool("Run",true);
+    }
+
+}
