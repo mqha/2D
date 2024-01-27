@@ -8,10 +8,17 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator animator;
 
+    private Player player;
+
     private void Awake()
     {
         currentHealth = startingHealth;
         animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        player = FindAnyObjectByType<Player>();
     }
     public void TakeDamage(float _damage)
     {
@@ -23,7 +30,14 @@ public class Health : MonoBehaviour
         else
         {
             animator.SetTrigger("Die");
+            Die();
+            Destroy(gameObject);
         }
+    }
+
+    private void Die()
+    {
+        player.onDead?.Invoke();
     }
 
 }

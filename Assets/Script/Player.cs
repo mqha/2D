@@ -6,9 +6,6 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private SkinManager skinManager;
 
-    private Health health;
-
-
     private float moveSpeed = 5f;
 
     private Rigidbody2D playerbody;
@@ -47,7 +44,7 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Trap")|| collision.CompareTag("Saw"))
+        if (collision.CompareTag("Trap"))
         {
 
             Die();
@@ -68,7 +65,6 @@ public class Player : MonoBehaviour
 
     protected virtual void Die()
     {
-
         Destroy(gameObject);
         onDead?.Invoke();
     }
