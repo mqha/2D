@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage3.unity
     guid: 36dd80586ba62c041ba47236865e42d5
+  - enabled: 1
+    path: Assets/Scenes/Leaderboard Aechievement.unity
+    guid: ba7a38ac95e0fbc4b91f42e65eec2730
   m_configObjects: {}
