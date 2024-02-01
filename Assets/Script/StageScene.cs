@@ -27,13 +27,10 @@ public class StageScene : MonoBehaviour
     {
         SceneManager.LoadScene("Stage3");
     }
-    public void SelectStage4()
+
+    public void OnLeaderboardclick()
     {
-        SceneManager.LoadScene("Stage4");
-    }
-    public void SelectStage5()
-    {
-        SceneManager.LoadScene("Stage5");
+        SceneManager.LoadScene(6);
     }
 
 
