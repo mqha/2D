@@ -9,6 +9,7 @@ public class SkinManager : ScriptableObject
     private const string Prefix = "Skin";
     private const string SelectedSkin = "SelectedSkin";
 
+
     public void SelectSkin(int skinIndex) => PlayerPrefs.SetInt(SelectedSkin, skinIndex);
 
     public Skin GetSelectedSkin()
@@ -24,7 +25,10 @@ public class SkinManager : ScriptableObject
         }
     }
 
+
     public void Unlock(int skinIndex) => PlayerPrefs.SetInt(Prefix + skinIndex, 1);
 
     public bool IsUnlocked(int skinIndex) => PlayerPrefs.GetInt(Prefix + skinIndex, 0) == 1;
+
+    
 }

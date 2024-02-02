@@ -2,9 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Gley.GameServices;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 
 public class GameServices : MonoBehaviour
 {
+
+    private void Start()
+    {
+        Login();
+    }
+
+
     public void Login()
     {
         Gley.GameServices.API.LogIn();

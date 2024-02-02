@@ -34,13 +34,11 @@ public class Player : MonoBehaviour
         transform.position += Vector3.right * moveSpeed * Time.deltaTime * horizontal;
 
         Flip();
+        AnimationRunning();
 
-        if(horizontal != 0 && !isRunning)
-        {
-            AnimationRunning();
-        }
 
     }
+
 
     private void Flip()
     {
@@ -81,8 +79,16 @@ public class Player : MonoBehaviour
 
     private void AnimationRunning()
     {
-        isRunning = true;
-        animator.SetBool("Run",true);
+        if (horizontal != 0)
+        {
+            isRunning = true;
+            animator.SetBool("Run", true);
+        }
+        else
+        {
+            isRunning = false;
+            animator.SetBool("Run", false);
+        }
     }
 
 }

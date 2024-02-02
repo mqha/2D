@@ -15,9 +15,13 @@ MonoBehaviour:
   skins:
   - cost: 0
     sprite: {fileID: -6367560908665664636, guid: 9dc4356ba5224b847af4c6fc3cd13028, type: 3}
+    animatorController: {fileID: 9100000, guid: 6e3aab56dbaa69b4697c9e0ff2e49326, type: 2}
   - cost: 100
     sprite: {fileID: -6367560908665664636, guid: 6ff470b725107e743b82efbf06782b7a, type: 3}
+    animatorController: {fileID: 9100000, guid: c53caeb355a47bf4587ef82d2c3952b7, type: 2}
   - cost: 200
     sprite: {fileID: -6367560908665664636, guid: e65ba067f22085a4686b1474368af58e, type: 3}
+    animatorController: {fileID: 9100000, guid: c78ebc78844211e47ba8c4b6b47db373, type: 2}
   - cost: 300
     sprite: {fileID: -6367560908665664636, guid: 4c2fabdb1f563de45848e22a880ece80, type: 3}
+    animatorController: {fileID: 9100000, guid: b2c6bd9f7554a864aa0e77afa9878148, type: 2}

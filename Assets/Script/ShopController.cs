@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class ShopController : MonoBehaviour
 {
@@ -18,4 +19,7 @@ public class ShopController : MonoBehaviour
     }
 
     public void LoadMenu() => SceneManager.LoadScene("Stage1");
+
 }
+
+
