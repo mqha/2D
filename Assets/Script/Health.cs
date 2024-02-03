@@ -7,9 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private Animator animator;
-
     private Player player;
-
     private void Awake()
     {
         currentHealth = startingHealth;
