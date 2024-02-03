@@ -10,10 +10,12 @@ public class SkinShopItem : MonoBehaviour
     [SerializeField] private int skinIndex;
     [SerializeField] private Button buyButton;
     [SerializeField] private TMP_Text costText;
+    [SerializeField] private GameObject NotiUI;
 
     private Skin skin;
     private void Start()
     {
+        NotiUI.SetActive(false);
         skin = skinManager.skins[skinIndex];
         GetComponent<Image>().sprite = skin.sprite;
         if (skinManager.IsUnlocked(skinIndex))
@@ -48,7 +50,12 @@ public class SkinShopItem : MonoBehaviour
         }
         else
         {
-            Debug.Log("ko du tien");
+            NotiUI.SetActive(true);
         }
+    }
+
+    public void OnBackBtnClick()
+    {
+        NotiUI.SetActive(false);
     }
 }

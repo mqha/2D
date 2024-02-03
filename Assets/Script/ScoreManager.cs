@@ -32,7 +32,4 @@ public class ScoreManager : MonoBehaviour
         if(highscore<score)
             PlayerPrefs.SetInt("highscore", score);
     }
-
-
-
 }

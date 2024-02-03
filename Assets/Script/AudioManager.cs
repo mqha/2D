@@ -5,14 +5,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviourSingletonPersistent<AudioManager>
 {
-
-
     public Sound[] musicSounds, sfxSounds;
-
     public AudioSource musicSource, sfxSource;
-
-    
-
     private void Start()
     {
         PlayMusic("Theme");
@@ -55,6 +49,4 @@ public class AudioManager : MonoBehaviourSingletonPersistent<AudioManager>
     {
         sfxSource.mute = !sfxSource.mute;
     }
-
-
 }

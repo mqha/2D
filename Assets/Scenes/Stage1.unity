@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86cf7938b0ceff418d97d302ed411af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 0
+  cameraSpeed: 1.5
 --- !u!1 &583071596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5465,63 +5465,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9207385670741587843, guid: ca6d80a027a748044aa9c1af66960063, type: 3}
   m_PrefabInstance: {fileID: 909975989}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1820682144
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031929, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374011131515031930, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
-      propertyPath: m_Name
-      value: TrapSaw
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 69b0375737fac434887fedce5cd6fb7f, type: 3}
 --- !u!1 &1834282013
 GameObject:
   m_ObjectHideFlags: 0
